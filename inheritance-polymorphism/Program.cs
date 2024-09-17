@@ -1,4 +1,6 @@
 ﻿
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using inheritance_polymorphism;
 
 #region // define and init the Person property directly
@@ -11,8 +13,27 @@ using inheritance_polymorphism;
 #endregion
 
 #region // add abstraction
-PersonHandler handler = new PersonHandler();
-Person person = handler.CreatePerson(20, "Bob", "Marley", 167, 78);
-handler.SetAge(person, 18);
-handler.PrintPersonDetails(person);
+static  void CreateTheNewPerson(int age, string firstName, string lastName, double height, double weight)
+{
+    try
+    {
+        PersonHandler handler = new PersonHandler();
+        Person person = handler.CreatePerson(age, firstName, lastName, height, weight);
+        handler.PrintPersonDetails(person);
+       
+    }
+    catch (ArgumentException ex)
+    {
+        Console.WriteLine($"The new error Argument Exeption happend: {ex.Message}");
+       
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"The new error Exeption occured: {ex.Message}");
+      
+    }
+}
 #endregion
+
+CreateTheNewPerson(20, "Mary", "Marley", 150, 45);
+CreateTheNewPerson(20, "Bob", "Marley", 167, 78);
