@@ -1,9 +1,18 @@
 ﻿
 using inheritance_polymorphism;
 
-Person person = new Person();
+#region // define and init the Person property directly
+// Person person = new Person();
+// person.FirstName = "Bob";
+// person.LastName = "Marley";
+// person.Age = 18;
+// person.Height = 167;
+// person.Weight = 78;
+#endregion
+
+#region // add abstraction
 PersonHandler handler = new PersonHandler();
-person.FirstName = "Bob";
-person.LastName = "Marley";
+Person person = handler.CreatePerson(20, "Bob", "Marley", 167, 78);
 handler.SetAge(person, 18);
-Console.WriteLine(person.FirstName + " " + person.LastName + " " + person.Age);
+handler.PrintPersonDetails(person);
+#endregion
