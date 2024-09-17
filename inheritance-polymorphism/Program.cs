@@ -2,7 +2,8 @@
 using inheritance_polymorphism;
 
 Person person = new Person();
+PersonHandler handler = new PersonHandler();
 person.FirstName = "Bob";
 person.LastName = "Marley";
-person.Age = 39;
-Console.WriteLine(person.FirstName + " " + person.LastName+ " " + person.Age);
+handler.SetAge(person, 18);
+Console.WriteLine(person.FirstName + " " + person.LastName + " " + person.Age);
