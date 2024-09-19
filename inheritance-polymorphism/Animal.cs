@@ -100,4 +100,52 @@ namespace inheritance_polymorphism
             Console.WriteLine("The wolf howls");
         }
     }
+
+    public class Pelican : Bird
+    {
+        public int NrOfFeathers { get; set; }
+
+        public Pelican(string name, double weight, int age, double wingSpan, int NrOfFeathers)
+            : base(name, weight, age, wingSpan)
+        {
+            this.NrOfFeathers = NrOfFeathers;
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("The pelican produces a low, hoarse sound");
+        }
+    }
+
+    public class Flamingo : Bird
+    {
+        public bool IsPink { get; set; }
+
+        public Flamingo(string name, double weight, int age, double wingSpan, bool IsPink)
+            : base(name, weight, age, wingSpan)
+        {
+            this.IsPink = IsPink;
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Flamingo vocalizations range from nasal honking to grunting or growling");
+        }
+    }
+
+    public class Swan : Bird
+    {
+        public bool DidPlaySwanLake { get; set; }
+
+        public Swan(string name, double weight, int age, double wingSpan, bool DidPlaySwanLake)
+            : base(name, weight, age, wingSpan)
+        {
+            this.DidPlaySwanLake = DidPlaySwanLake;
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Swan gives the characteristic deep, trumpeting “oh-OH” call, with the second syllable emphasized");
+        }
+    }
 }
