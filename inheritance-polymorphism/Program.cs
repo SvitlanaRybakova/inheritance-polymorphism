@@ -156,3 +156,4 @@ static void CreateTheDogList()
         dog.DoSound();
     }
 }
+CreateTheDogList();

@@ -21,7 +21,7 @@ namespace inheritance_polymorphism
 
         public abstract void DoSound();
 
-        public virtual string Stats() => $"The {this} class has the following properties: \n Name: {Name}, Weight: {Weight}, Age: {Age}";
+        public virtual string Stats() => $"The {this} class has the following properties: \n Name: {Name}, Weight: {Weight} kg, Age: {Age} year(s)";
     }
 
     public class Horse : Animal
@@ -33,7 +33,7 @@ namespace inheritance_polymorphism
         }
         public override void DoSound() => Console.WriteLine("The horse neighs");
 
-        public override string Stats() => $"{base.Stats()}, Number of rides: {NrOfRide}";
+        public override string Stats() => $"{base.Stats()}, Number of rides: {NrOfRide} time(s)";
     }
 
     public class Dog : Animal
@@ -45,7 +45,7 @@ namespace inheritance_polymorphism
         }
         public override void DoSound() => Console.WriteLine("The dog barks");
 
-        public override string Stats() => $"{base.Stats()}, Number of chewed slippers: {NrOfChewedSlippers}";
+        public override string Stats() => $"{base.Stats()}, Number of chewed slippers: {NrOfChewedSlippers} piece(s)";
     }
 
     public class Hedgehog : Animal
@@ -57,7 +57,7 @@ namespace inheritance_polymorphism
         }
         public override void DoSound() => Console.WriteLine("The hedgehog makes some (have no idea) sound");
 
-        public override string Stats() => $"{base.Stats()}, Number of spikes: {NrOfSpikes}";
+        public override string Stats() => $"{base.Stats()}, Number of spikes: {NrOfSpikes} piece(s)";
     }
 
     public class Worm : Animal
@@ -81,7 +81,7 @@ namespace inheritance_polymorphism
             WingSpan = wingSpan;
         }
         public override void DoSound() => Console.WriteLine("The bird sings");
-        public override string Stats() => $"{base.Stats()},  WingSpan : {WingSpan}";
+        public override string Stats() => $"{base.Stats()},  WingSpan : {WingSpan} meter(s)";
 
     }
 
@@ -95,7 +95,7 @@ namespace inheritance_polymorphism
         }
         public override void DoSound() => Console.WriteLine("The wolf howls");
 
-        public override string Stats() => $"{base.Stats()},  ammount of teeth : {TeethAmmount}";
+        public override string Stats() => $"{base.Stats()},  ammount of teeth : {TeethAmmount} piece(s)";
     }
 
     public class Pelican : Bird
@@ -110,7 +110,7 @@ namespace inheritance_polymorphism
 
         public override void DoSound() => Console.WriteLine("The pelican produces a low, hoarse sound");
 
-        public override string Stats() => $"{base.Stats()}, Number of feathers : {NrOfFeathers}";
+        public override string Stats() => $"{base.Stats()}, Number of feathers : {NrOfFeathers} piece(s)";
     }
 
     public class Flamingo : Bird

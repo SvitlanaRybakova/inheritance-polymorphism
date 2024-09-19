@@ -10,7 +10,8 @@ namespace inheritance_polymorphism
         static public double GetDoubleRandom(double minValue, double maxValue)
         {
             Random random = new Random();
-            return minValue + (random.NextDouble() * (maxValue - minValue));
+            double result = minValue + (random.NextDouble() * (maxValue - minValue));
+            return Math.Round(result, 2);
         }
     }
 }
