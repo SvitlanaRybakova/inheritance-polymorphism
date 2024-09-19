@@ -36,8 +36,8 @@ static void CreateTheNewPerson(int age, string firstName, string lastName, doubl
 }
 #endregion
 
-CreateTheNewPerson(20, "Mary", "Marley", 150, 45);
-CreateTheNewPerson(20, "Bob", "Marley", 167, 78);
+CreateTheNewPerson(Convert.ToInt32(Utils.GetDoubleRandom(1, 100)), "Mary", "Marley", Utils.GetDoubleRandom(50, 200), Utils.GetDoubleRandom(3, 240));
+CreateTheNewPerson(Convert.ToInt32(Utils.GetDoubleRandom(1, 100)), "Bob", "Marley", Utils.GetDoubleRandom(50, 200), Utils.GetDoubleRandom(3, 240));
 
 static void CreateTheErrorsList()
 {
@@ -122,9 +122,9 @@ CheckTheUserRegistration("new.user@gmail.com");
 static void CreateTheAnimalList()
 {
     List<Animal> animals = new List<Animal>{
-        new Horse("Alaska", 56.5, 4, 23),
-        new Dog("Bobby", 12, 3, 56),
-        new Hedgehog("Spark", 3, 2, 1200)
+        new Horse("Alaska", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(50, 1200)), Convert.ToInt32(Utils.GetDoubleRandom(2, 120))),
+        new Dog("Bobby", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(2, 12)), Convert.ToInt32(Utils.GetDoubleRandom(2, 12))),
+        new Hedgehog("Spark", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(2, 12)), Convert.ToInt32(Utils.GetDoubleRandom(1000, 20000)))
     };
 
     foreach (Animal animal in animals)
@@ -137,6 +137,22 @@ static void CreateTheAnimalList()
             person.Talk();
         }
     }
-
 }
+
 CreateTheAnimalList();
+
+static void CreateTheDogList()
+{
+    List<Dog> dogs = new List<Dog>{
+        new Dog("Alaska", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(2, 12)), Convert.ToInt32(Utils.GetDoubleRandom(2, 12))),
+        new Dog("Bobby", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(2, 12)), Convert.ToInt32(Utils.GetDoubleRandom(2, 12))),
+        new Dog("Spark", Utils.GetDoubleRandom(2, 24), Convert.ToInt32(Utils.GetDoubleRandom(2, 12)), Convert.ToInt32(Utils.GetDoubleRandom(2, 12))),
+
+    };
+
+    foreach (Dog dog in dogs)
+    {
+        Console.WriteLine(dog.Stats());
+        dog.DoSound();
+    }
+}
