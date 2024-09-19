@@ -13,27 +13,43 @@ using inheritance_polymorphism;
 #endregion
 
 #region // add abstraction
-static  void CreateTheNewPerson(int age, string firstName, string lastName, double height, double weight)
+static void CreateTheNewPerson(int age, string firstName, string lastName, double height, double weight)
 {
     try
     {
         PersonHandler handler = new PersonHandler();
         Person person = handler.CreatePerson(age, firstName, lastName, height, weight);
         handler.PrintPersonDetails(person);
-       
+
     }
     catch (ArgumentException ex)
     {
         Console.WriteLine($"The new error Argument Exeption happend: {ex.Message}");
-       
+
     }
     catch (Exception ex)
     {
         Console.WriteLine($"The new error Exeption occured: {ex.Message}");
-      
+
     }
 }
 #endregion
 
 CreateTheNewPerson(20, "Mary", "Marley", 150, 45);
 CreateTheNewPerson(20, "Bob", "Marley", 167, 78);
+
+static void CreateTheErrorsList()
+{
+    List<UserError> errors = new List<UserError>{
+        new NumericInputError(),
+        new TextInputError()
+
+    };
+
+    foreach (UserError error in errors)
+    {
+        Console.WriteLine(error.UEMessage());
+    }
+
+}
+CreateTheErrorsList();
