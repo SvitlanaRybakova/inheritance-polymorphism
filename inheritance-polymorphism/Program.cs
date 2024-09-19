@@ -118,3 +118,25 @@ static void CheckTheUserRegistration(string email)
 }
 CheckTheUserRegistration("existing.user@gmail.com");
 CheckTheUserRegistration("new.user@gmail.com");
+
+static void CreateTheAnimalList()
+{
+    List<Animal> animals = new List<Animal>{
+        new Horse("Alaska", 56.5, 4, 23),
+        new Dog("Bobby", 12, 3, 56),
+        new Hedgehog("Spark", 3, 2, 1200)
+    };
+
+    foreach (Animal animal in animals)
+    {
+        Console.WriteLine(animal.Stats());
+        animal.DoSound();
+
+        if (animal is IPerson person)
+        {
+            person.Talk();
+        }
+    }
+
+}
+CreateTheAnimalList();
