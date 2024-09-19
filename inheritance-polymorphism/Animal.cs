@@ -25,9 +25,9 @@ namespace inheritance_polymorphism
     public class Horse : Animal
     {
         public int NrOfRide { get; set; }
-        public Horse(string name, double weight, int age, int NrOfRide) : base(name, weight, age)
+        public Horse(string name, double weight, int age, int nrOfRide) : base(name, weight, age)
         {
-            this.NrOfRide = NrOfRide;
+            NrOfRide = nrOfRide;
         }
         public override void DoSound()
         {
@@ -38,9 +38,9 @@ namespace inheritance_polymorphism
     public class Dog : Animal
     {
         public int NrOfChewedSlippers { get; set; }
-        public Dog(string name, double weight, int age, int NrOfChewedSlippers) : base(name, weight, age)
+        public Dog(string name, double weight, int age, int nrOfChewedSlippers) : base(name, weight, age)
         {
-            this.NrOfChewedSlippers = NrOfChewedSlippers;
+            NrOfChewedSlippers = nrOfChewedSlippers;
         }
         public override void DoSound()
         {
@@ -51,9 +51,9 @@ namespace inheritance_polymorphism
     public class Hedgehog : Animal
     {
         public int NrOfSpikes { get; set; }
-        public Hedgehog(string name, double weight, int age, int NrOfSpikes) : base(name, weight, age)
+        public Hedgehog(string name, double weight, int age, int nrOfSpikes) : base(name, weight, age)
         {
-            this.NrOfSpikes = NrOfSpikes;
+            NrOfSpikes = nrOfSpikes;
         }
         public override void DoSound()
         {
@@ -64,9 +64,9 @@ namespace inheritance_polymorphism
     public class Worm : Animal
     {
         public bool IsPoisonous { get; set; }
-        public Worm(string name, double weight, int age, bool IsPoisonous) : base(name, weight, age)
+        public Worm(string name, double weight, int age, bool isPoisonous) : base(name, weight, age)
         {
-            this.IsPoisonous = IsPoisonous;
+            IsPoisonous = isPoisonous;
         }
         public override void DoSound()
         {
@@ -77,9 +77,9 @@ namespace inheritance_polymorphism
     public class Bird : Animal
     {
         public double WingSpan { get; set; }
-        public Bird(string name, double weight, int age, double WingSpan) : base(name, weight, age)
+        public Bird(string name, double weight, int age, double wingSpan) : base(name, weight, age)
         {
-            this.WingSpan = WingSpan;
+            WingSpan = wingSpan;
         }
         public override void DoSound()
         {
@@ -91,9 +91,9 @@ namespace inheritance_polymorphism
     {
 
         public int TeethAmmount { get; set; }
-        public Wolf(string name, double weight, int age, int TeethAmmount) : base(name, weight, age)
+        public Wolf(string name, double weight, int age, int teethAmmount) : base(name, weight, age)
         {
-            this.TeethAmmount = TeethAmmount;
+            TeethAmmount = teethAmmount;
         }
         public override void DoSound()
         {
@@ -105,10 +105,10 @@ namespace inheritance_polymorphism
     {
         public int NrOfFeathers { get; set; }
 
-        public Pelican(string name, double weight, int age, double wingSpan, int NrOfFeathers)
+        public Pelican(string name, double weight, int age, double wingSpan, int nrOfFeathers)
             : base(name, weight, age, wingSpan)
         {
-            this.NrOfFeathers = NrOfFeathers;
+            NrOfFeathers = nrOfFeathers;
         }
 
         public override void DoSound()
@@ -121,10 +121,10 @@ namespace inheritance_polymorphism
     {
         public bool IsPink { get; set; }
 
-        public Flamingo(string name, double weight, int age, double wingSpan, bool IsPink)
+        public Flamingo(string name, double weight, int age, double wingSpan, bool isPink)
             : base(name, weight, age, wingSpan)
         {
-            this.IsPink = IsPink;
+            IsPink = isPink;
         }
 
         public override void DoSound()
@@ -137,10 +137,10 @@ namespace inheritance_polymorphism
     {
         public bool DidPlaySwanLake { get; set; }
 
-        public Swan(string name, double weight, int age, double wingSpan, bool DidPlaySwanLake)
+        public Swan(string name, double weight, int age, double wingSpan, bool didPlaySwanLake)
             : base(name, weight, age, wingSpan)
         {
-            this.DidPlaySwanLake = DidPlaySwanLake;
+            DidPlaySwanLake = didPlaySwanLake;
         }
 
         public override void DoSound()
@@ -148,4 +148,23 @@ namespace inheritance_polymorphism
             Console.WriteLine("Swan gives the characteristic deep, trumpeting “oh-OH” call, with the second syllable emphasized");
         }
     }
+
+    public interface IPerson
+    {
+        void Talk();
+    }
+
+    public class Wolfman : Wolf, IPerson
+    {
+        public Wolfman(string name, double weight, int age, int teethAmmount)
+            : base(name, weight, age, teethAmmount) { }
+
+        public void Talk()
+        {
+            Console.WriteLine("The Wolfman says: Boo!");
+        }
+    }
+
+    // För att säkerställa att alla fågelrelaterade klasser har tillgång till det nya attributet bör det definieras i deras gemensamma superklass => Bird klassen
+    // Om alla djur beh;ver det nya attributet då lägga man det i Animal klasssen 
 }
