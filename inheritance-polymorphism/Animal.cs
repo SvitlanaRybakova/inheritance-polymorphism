@@ -24,7 +24,11 @@ namespace inheritance_polymorphism
 
     public class Horse : Animal
     {
-        public Horse(string name, double weight, int age) : base(name, weight, age) { }
+        public int NrOfRide { get; set; }
+        public Horse(string name, double weight, int age, int NrOfRide) : base(name, weight, age)
+        {
+            this.NrOfRide = NrOfRide;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The horse neighs");
@@ -33,7 +37,11 @@ namespace inheritance_polymorphism
 
     public class Dog : Animal
     {
-        public Dog(string name, double weight, int age) : base(name, weight, age) { }
+        public int NrOfChewedSlippers { get; set; }
+        public Dog(string name, double weight, int age, int NrOfChewedSlippers) : base(name, weight, age)
+        {
+            this.NrOfChewedSlippers = NrOfChewedSlippers;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The dog barks");
@@ -42,7 +50,11 @@ namespace inheritance_polymorphism
 
     public class Hedgehog : Animal
     {
-        public Hedgehog(string name, double weight, int age) : base(name, weight, age) { }
+        public int NrOfSpikes { get; set; }
+        public Hedgehog(string name, double weight, int age, int NrOfSpikes) : base(name, weight, age)
+        {
+            this.NrOfSpikes = NrOfSpikes;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The hedgehog makes some (have no idea) sound");
@@ -51,25 +63,38 @@ namespace inheritance_polymorphism
 
     public class Worm : Animal
     {
-        public Worm(string name, double weight, int age) : base(name, weight, age) { }
+        public bool IsPoisonous { get; set; }
+        public Worm(string name, double weight, int age, bool IsPoisonous) : base(name, weight, age)
+        {
+            this.IsPoisonous = IsPoisonous;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The worm makes no sound");
         }
     }
 
-     public class Bird : Animal
+    public class Bird : Animal
     {
-        public Bird(string name, double weight, int age) : base(name, weight, age) { }
+        public double WingSpan { get; set; }
+        public Bird(string name, double weight, int age, double WingSpan) : base(name, weight, age)
+        {
+            this.WingSpan = WingSpan;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The bird sings");
         }
     }
 
-     public class Wolf : Animal
+    public class Wolf : Animal
     {
-        public Wolf(string name, double weight, int age) : base(name, weight, age) { }
+
+        public int TeethAmmount { get; set; }
+        public Wolf(string name, double weight, int age, int TeethAmmount) : base(name, weight, age)
+        {
+            this.TeethAmmount = TeethAmmount;
+        }
         public override void DoSound()
         {
             Console.WriteLine("The wolf howls");
