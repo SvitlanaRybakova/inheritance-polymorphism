@@ -46,6 +46,7 @@ namespace inheritance_polymorphism
         public override void DoSound() => Console.WriteLine("The dog barks");
 
         public override string Stats() => $"{base.Stats()}, Number of chewed slippers: {NrOfChewedSlippers} piece(s)";
+        public string RandomString() => $"This is message from Animal class";
     }
 
     public class Hedgehog : Animal

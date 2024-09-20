@@ -131,12 +131,17 @@ static void CreateTheAnimalList()
     {
         Console.WriteLine(animal.Stats());
         animal.DoSound();
+       // animal.RandomString(); Metoden RandomString() är inte en del av Animal klassen, och kan inte anropas. RandomString() definerad i en Dog klassen.
+    
 
         if (animal is IPerson person)
         {
             person.Talk();
         }
     }
+    // Polymorfism tillåter oss att lagra olika subklasser i en lista över huvudklassen (Animal).
+    // Varje subklass overrides Stats()-metoden, som anropas dynamiskt under körning.
+   
 }
 
 CreateTheAnimalList();
@@ -150,10 +155,12 @@ static void CreateTheDogList()
 
     };
 
+    // man kan inte lägga till en häst i en lista av hundar eftersom en häst och en hund är olika typer och tillhör olika klasser
+    // för att lägga all klasser tillsammans listan måste vara av typen Animal
     foreach (Dog dog in dogs)
     {
         Console.WriteLine(dog.Stats());
-        dog.DoSound();
+        Console.WriteLine(dog.RandomString());
     }
 }
 CreateTheDogList();
